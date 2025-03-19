@@ -1,5 +1,3 @@
-library circular_loader;
-
 import 'dart:async';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +26,7 @@ class CircularLoaderComponent extends StatelessWidget {
   final WidgetFromDataBuilder<CircularLoaderController>? warningMessageBuilder;
 
   const CircularLoaderComponent({
-    Key? key,
+    super.key,
     required this.controller,
     this.child,
     this.cover = true,
@@ -52,7 +50,7 @@ class CircularLoaderComponent extends StatelessWidget {
     this.warningMessageAlign,
     this.warningMessageBuilder =
         CircularLoaderComponent.messageWarningNotifMode,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +73,8 @@ class CircularLoaderComponent extends StatelessWidget {
                       (cover && value.state != CircularLoaderState.idle) ==
                               false
                           ? null
-                          : coverColor ?? Colors.grey.shade400.withOpacity(0.6),
+                          : coverColor ??
+                              Colors.grey.shade400.withValues(alpha: 0.6),
                   child: childBuilder(context, value.state),
                 ),
               ],
@@ -190,7 +189,7 @@ class CircularLoaderComponent extends StatelessWidget {
           children: [
             controller.value.icon ??
                 const Icon(
-                  FontAwesomeIcons.checkCircle,
+                  FontAwesomeIcons.circleCheck,
                   color: Colors.green,
                   size: 50,
                 ),
@@ -293,7 +292,7 @@ class CircularLoaderComponent extends StatelessWidget {
             children: [
               controller.value.icon ??
                   const Icon(
-                    FontAwesomeIcons.timesCircle,
+                    FontAwesomeIcons.circleXmark,
                     color: Colors.red,
                     size: 50,
                   ),
