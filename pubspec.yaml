@@ -1,0 +1,26 @@
+name: circular_loader
+description: "A new Flutter plugin project."
+version: 0.0.1
+homepage: "circular_loader"
+
+environment:
+  sdk: ^3.7.2
+  flutter: ">=3.3.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+  font_awesome_flutter: any
+  flutter_super_html_viewer: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  plugin:
+    platforms:
+      some_platform:
+        pluginClass: somePluginClass
