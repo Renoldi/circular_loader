@@ -1,9 +1,8 @@
 library circular_loader;
 
 import 'dart:async';
-
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_super_html_viewer/flutter_super_html_viewer.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CircularLoaderComponent extends StatelessWidget {
@@ -208,9 +207,7 @@ class CircularLoaderComponent extends StatelessWidget {
                     height: 300,
                     color: Colors.transparent,
                     child: SingleChildScrollView(
-                      child: HtmlContentViewer(
-                        htmlContent: controller.value.message ?? "",
-                      ),
+                      child: HtmlWidget(controller.value.message ?? ""),
                     ),
                   ),
                 ),
@@ -253,9 +250,7 @@ class CircularLoaderComponent extends StatelessWidget {
                     height: 300,
                     color: Colors.transparent,
                     child: SingleChildScrollView(
-                      child: HtmlContentViewer(
-                        htmlContent: controller.value.message ?? "",
-                      ),
+                      child: HtmlWidget(controller.value.message ?? ""),
                     ),
                   ),
                 ),
@@ -315,9 +310,7 @@ class CircularLoaderComponent extends StatelessWidget {
                       height: 300,
                       color: Colors.transparent,
                       child: SingleChildScrollView(
-                        child: HtmlContentViewer(
-                          htmlContent: controller.value.message ?? "",
-                        ),
+                        child: HtmlWidget(controller.value.message ?? ""),
                       ),
                     ),
                   ),
@@ -361,9 +354,7 @@ class CircularLoaderComponent extends StatelessWidget {
                     height: 300,
                     color: Colors.transparent,
                     child: SingleChildScrollView(
-                      child: HtmlContentViewer(
-                        htmlContent: controller.value.message ?? "",
-                      ),
+                      child: HtmlWidget(controller.value.message ?? ""),
                     ),
                   ),
                 ),
@@ -404,9 +395,7 @@ class CircularLoaderComponent extends StatelessWidget {
                     height: 300,
                     color: Colors.transparent,
                     child: SingleChildScrollView(
-                      child: HtmlContentViewer(
-                        htmlContent: controller.value.message ?? "",
-                      ),
+                      child: HtmlWidget(controller.value.message ?? ""),
                     ),
                   ),
                 ),
@@ -481,7 +470,7 @@ class CircularLoaderController extends ValueNotifier<CircularLoaderValue> {
     Widget? messageWidget,
   }) {
     value.onclosed = false;
-    value.onCloseCallback = onCloseCallBack;
+    // value.onCloseCallback = onCloseCallBack;
     value.state =
         isError == true
             ? CircularLoaderState.showError
